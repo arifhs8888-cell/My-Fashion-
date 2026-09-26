@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAZU - Fashion Store</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* এখানে পুরো CSS কোডটি পেস্ট করে দিন */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f3;
+            color: #111;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .top-bar {
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 40px;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        .top-links a {
+            margin-left: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            border-bottom: 1px solid #e0e0e0;
+            background: #f5f5f3;
+        }
+
+        .nav-left a, .nav-right a {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-right: 20px;
+        }
+
+        .logo h1 {
+            font-size: 32px;
+            font-weight: 900;
+            letter-spacing: 3px;
+        }
+
+        .hero {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 60px;
+            min-height: 80vh;
+            overflow: hidden;
+        }
+
+        .hero-text-left .tagline {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 150px;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            font-size: 11px;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+
+        .btn-black {
+            background: #000;
+            color: #fff;
+            border: 1px solid #000;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #000;
+            border: 1px solid #000;
+        }
+
+        .hero-center {
+            position: relative;
+            text-align: center;
+            width: 600px;
+        }
+
+        .bg-brand-name {
+            font-size: 200px;
+            font-weight: 900;
+            letter-spacing: 10px;
+            color: #000;
+            line-height: 1;
+            user-select: none;
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-height: 500px;
+            z-index: 2;
+            mix-blend-mode: multiply;
+        }
+
+        .hero-text-right {
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-align: right;
+            line-height: 1.5;
+        }
+
+        .categories {
+            background: #000;
+            color: #fff;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .category-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: #111;
+            padding: 20px;
+        }
+
+        .category-card img {
+            width: 100px;
+            height: 120px;
+            object-fit: cover;
+        }
+
+        .cat-info h3 {
+            font-size: 16px;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .cat-info p {
+            font-size: 12px;
+            color: #aaa;
+            margin-bottom: 15px;
+        }
+
+        .cat-info a {
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #fff;
+            padding-bottom: 2px;
+        }
+
+        .new-season {
+            padding: 60px 40px;
+        }
+
+        .season-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sub-title {
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: #666;
+        }
+
+        .season-text h2 {
+            font-size: 60px;
+            font-weight: 900;
+            line-height: 1;
+            margin: 15px 0;
+            letter-spacing: 2px;
+        }
+
+        .season-text p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .season-image img {
+            width: 650px;
+            height: 450px;
+            object-fit: cover;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            padding: 30px 40px;
+            border-top: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
+            background: #eaeaea;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .feature-item i {
+            font-size: 24px;
+        }
+
+        .feature-item h4 {
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        .feature-item p {
+            font-size: 11px;
+            color: #666;
+        }
+
+        .products-section {
+            padding: 60px 40px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .section-header h2 {
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+
+        .view-all {
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-decoration: underline;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .product-card {
+            position: relative;
+        }
+
+        .product-img {
+            position: relative;
+            background: #e0e0e0;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .wishlist-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: transparent;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Announcement Bar -->
+    <div class="top-bar">
+        <p>FREE DELIVERY ON ORDERS ABOVE ৳999</p>
+        <div class="top-links">
+            <a href="#">DOWNLOAD APP</a>
+            <a href="#">TRACK ORDER</a>
+            <a href="#">HELP</a>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="nav-left">
+            <a href="#">MEN</a>
+            <a href="#">WOMEN</a>
+            <a href="#">KIDS</a>
+            <a href="#">BEAUTY</a>
+        </nav>
+        
+        <div class="logo">
+            <h1>GAZU</h1>
+        </div>
+
+        <div class="nav-right">
+            <a href="#"><i class="fa-solid fa-magnifying-glass"></i> SEARCH</a>
+            <a href="#"><i class="fa-regular fa-user"></i> LOGIN</a>
+            <a href="#"><i class="fa-regular fa-heart"></i> WISHLIST</a>
+            <a href="#"><i class="fa-solid fa-bag-shopping"></i> CART (0)</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text-left">
+            <p class="tagline">FASHION<br>THAT MOVES<br>WITH YOU.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-black">SHOP NOW</a>
+                <a href="#" class="btn btn-outline">EXPLORE NEW IN</a>
+            </div>
+        </div>
+
+        <div class="hero-center">
+            <h1 class="bg-brand-name">GAZU</h1>
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop" alt="Hero Model" class="hero-image">
+        </div>
+
+        <div class="hero-text-right">
+            <p>NEW<br>COLLECTION<br><strong>2024</strong></p>
+        </div>
+    </section>
+
+    <!-- Categories Banner -->
+    <section class="categories">
+        <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=400&auto=format&fit=crop" alt="Men">
+            <div class="cat-info">
+                <h3>MEN</h3>
+                <p>Elevated everyday essentials.</p>
+                <a href="#">SHOP MEN &rarr;</a>
+            </div>
+        </div>
+
+        <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop" alt="Women">
+            <div class="cat-info">
+                <h3>WOMEN</h3>
+                <p>Effortless style for every you.</p>
+                <a href="#">SHOP WOMEN &rarr;</a>
+            </div>
+        </div>
+
+        <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?q=80&w=400&auto=format&fit=crop" alt="Kids">
+            <div class="cat-info">
+                <h3>KIDS</h3>
+                <p>Comfort meets cool everyday.</p>
+                <a href="#">SHOP KIDS &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Season Section -->
+    <section class="new-season">
+        <div class="season-content">
+            <div class="season-text">
+                <span class="sub-title">NEW SEASON</span>
+                <h2>NEW<br>VIBES</h2>
+                <p>Discover everything new and now.</p>
+                <a href="#" class="btn btn-black">EXPLORE COLLECTION</a>
+            </div>
+            <div class="season-image">
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=800&auto=format&fit=crop" alt="New Season">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features / Highlights Bar -->
+    <section class="features">
+        <div class="feature-item">
+            <i class="fa-solid fa-truck-fast"></i>
+            <div>
+                <h4>FAST DELIVERY</h4>
+                <p>Quick & safe delivery</p>
+            </div>
+        </div>
+        <div class="feature-item">
+            <i class="fa-solid fa-rotate-left"></i>
+            <div>
+                <h4>EASY RETURNS</h4>
+                <p>Within 15 days</p>
+            </div>
+        </div>
+        <div class="feature-item">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div>
+                <h4>QUALITY ASSURED</h4>
+                <p>Best fashion, best quality</p>
+            </div>
+        </div>
+        <div class="feature-item">
+            <i class="fa-solid fa-lock"></i>
+            <div>
+                <h4>SECURE PAYMENT</h4>
+                <p>100% secure checkout</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Sellers Section -->
+    <section class="products-section">
+        <div class="section-header">
+            <h2>BEST OF GAZU</h2>
+            <a href="#" class="view-all">VIEW ALL</a>
+        </div>
+
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=400&auto=format&fit=crop" alt="Product">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=400&auto=format&fit=crop" alt="Product">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=400&auto=format&fit=crop" alt="Product">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=400&auto=format&fit=crop" alt="Product">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
